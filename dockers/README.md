@@ -10,11 +10,8 @@ Example to proxy 4 https websites over haproxy
 ## Description
 
 The docker-compose will start up 4 nginx servers with uniq ports.
-
 The docker-compose will also start one haproxy what listens on 4 virtual domain names on port 80 and 443.
-
 The haproxy will regargin to its mounted haproxy.cfg file then proxy it to its backend and handle the https certificates.
-
 The certificates were issued by minica, a private self authority cert for testing and development purpose.
 
 
