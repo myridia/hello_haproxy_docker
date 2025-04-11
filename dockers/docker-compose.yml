@@ -1,0 +1,53 @@
+version: '3'
+services:
+  app1:
+    container_name: app1
+    image: nginx
+    ports:
+        - "81:80" 
+    volumes:
+    #  - ../public:/usr/share/nginx/html/
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+    tty: true
+  app2:
+    container_name: app2
+    image: nginx
+    ports:
+        - "82:80" 
+    volumes:
+    #  - ../public:/usr/share/nginx/html/
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+    tty: true
+
+  app3:
+    container_name: app3
+    image: nginx
+    ports:
+        - "83:80" 
+    volumes:
+    #  - ../public:/usr/share/nginx/html/
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+    tty: true
+
+  foo:
+    container_name: foo
+    image: nginx
+    ports:
+        - "84:80" 
+    volumes:
+    #  - ../public:/usr/share/nginx/html/
+      - ./etc/nginx/conf.d:/etc/nginx/conf.d
+    tty: true        
+
+      
+  ha_proxy:
+    container_name: ha_proxy    
+    image: haproxy:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "80:80"
+      - "443:443" 
+    volumes:
+      - "./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg"
+      - "./certs/:/opt/certs/"      
