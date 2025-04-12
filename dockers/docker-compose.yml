@@ -6,7 +6,7 @@ services:
     ports:
         - "81:80" 
     volumes:
-    #  - ../public:/usr/share/nginx/html/
+      - ../public/app1:/usr/share/nginx/html/
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
     tty: true
   app2:
@@ -15,7 +15,7 @@ services:
     ports:
         - "82:80" 
     volumes:
-    #  - ../public:/usr/share/nginx/html/
+      - ../public/app2:/usr/share/nginx/html/
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
     tty: true
 
@@ -25,7 +25,7 @@ services:
     ports:
         - "83:80" 
     volumes:
-    #  - ../public:/usr/share/nginx/html/
+      - ../public/app3:/usr/share/nginx/html/
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
     tty: true
 
@@ -35,7 +35,7 @@ services:
     ports:
         - "84:80" 
     volumes:
-    #  - ../public:/usr/share/nginx/html/
+      - ../public/foo:/usr/share/nginx/html/
       - ./etc/nginx/conf.d:/etc/nginx/conf.d
     tty: true        
 
