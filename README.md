@@ -45,5 +45,7 @@ docker-compose up
 
 
 
+## Screencast Example Installation
+![Alt text](./assets/hello_hproxy_dockers.gif?raw=true "Title")
 
 
