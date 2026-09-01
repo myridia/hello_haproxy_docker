@@ -1,3 +1,5 @@
+<img src="hello_haproxy_docker.svg" alt="hello_haproxy_docker" width="120">
+
 # hello_haproxy_docker
 
 Example to proxy 4 https websites over haproxy
